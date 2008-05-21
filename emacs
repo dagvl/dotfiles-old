@@ -6,6 +6,7 @@
 
 ;;; Always do syntax highlighting
 (global-font-lock-mode 1)
+(setq font-lock-maximum-decoration 3)
 
 ;;; Also highlight parens
 (setq show-paren-delay 0

@@ -12,16 +12,8 @@ if [ -f /etc/bashrc ]; then
 fi
 
 if [ "$PS1" ]; then
-#######################
-# Interactive Startup #
-#######################
-    . ~/.bash/aliases.sh
-    #. ~/.bash/completions.sh
-    . ~/.bash/prompt.sh
-    . ~/.bash/functions.sh
 	keychain --nolock ~/.ssh/id_dsa
 	. ~/.keychain/${HOSTNAME}-sh
-    fortune
 else
 ###########################
 # Non-Interactive Startup #
@@ -51,3 +43,11 @@ export EDITOR=vim
 # Make sure our customised gtkrc file is loaded.
 # (This is no longer needed from version 0.8 of the theme engine)
 # export GTK2_RC_FILES=$HOME/.gtkrc-2.0
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
