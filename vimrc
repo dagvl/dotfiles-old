@@ -35,14 +35,11 @@ set sm
 " Autoindents
 set ai
 
-" Autoindents C code
-set cin
-
 " Tabs are 4 spaces long
-set tabstop=2
+set tabstop=4
 
 " When autoindent does a tab, it's 4 spaces long
-set shiftwidth=2
+set shiftwidth=4
 
 " No need to save to make a :next :previous, etc.
 set aw
@@ -67,14 +64,10 @@ set title
 set ttyfast
 
 " Tabs are converted to space characters
-" set et
+set et
 
 " Remove autocommands just in case
 autocmd!
-
-" When using mutt or slrn, text width=72
-autocmd BufRead  mutt*[0-9]                    set tw=72
-autocmd BufRead  .followup,.article,.letter    set tw=72
 
 " Text files have a text width of 72 characters
 autocmd BufNewFile *.txt                       set tw=72
@@ -152,3 +145,57 @@ syntax on
 " Fikse farger i gvim og vim.
 hi normal   guifg=white  guibg=black
 hi nontext  guifg=blue   guibg=black
+
+" enter spaces when tab is pressed:
+set expandtab
+" do not break lines when line lenght increases
+set textwidth=0
+" user 4 spaces to represent a tab
+set tabstop=4
+set softtabstop=4
+" number of space to use for auto indent
+" you can use >> or << keys to indent current line or selection
+" in normal mode.
+set shiftwidth=4
+" Copy indent from current line when starting a new line.
+set autoindent
+" makes backspace key more powerful.
+set backspace=indent,eol,start
+" shows the match while typing
+set incsearch
+" case insensitive search
+set ignorecase
+" show line and column number
+set ruler
+" show some autocomplete options in status bar
+set wildmenu
+
+" automatically save and restore folds
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
+
+" this lets us put the marker in the file so that
+" it can be shared across and stored in version control.
+set foldmethod=marker
+" this is for python, put
+" # name for the folded text # {{{
+" to begin marker and
+" # }}}
+" close to end it.
+set commentstring=\ #\ %s
+" default fold level, all open, set it 200 or something
+" to make it all closed.
+set foldlevel=0
+
+" share clipboard with windows clipboard
+set clipboard+=unnamed
+
+" set viminfo='100,f1
+" minibufexplorer settings:j
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchWindows = 1
+
+colorscheme slate
+
+" linenumbers
+set nu
