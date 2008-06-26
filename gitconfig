@@ -1,0 +1,7 @@
+[user]
+	name = Dag Viggo Lokøen
+	email = dag.viggo@lokoen.org
+[color]
+	diff = auto
+	status = auto
+	branch = auto
