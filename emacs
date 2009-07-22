@@ -18,6 +18,12 @@
 (setq load-path (cons "/home/dagvl/vcs/erlware-mode" load-path))
 (require 'erlang-start)
 
+;; org-mode
+(setq load-path (cons "~/vcs/org-mode" load-path))
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
 
 ;;color
 (require 'color-theme)
