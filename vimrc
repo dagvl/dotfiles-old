@@ -17,9 +17,6 @@ set scrolloff=3
 " We show vertical and horizontal position
 set ruler
 
-" Y = y$ not yy.  More intuative
-noremap Y y$
-
 " Tilde (~) acts like an operator (à la 'd' or 'c')
 "set top
 
@@ -47,9 +44,6 @@ set aw
 " C-a and C-e go to beginning/end of line in insert mode (I hate Home and End)
 inoremap <C-a> <Home>
 inoremap <C-e> <End> 
-
-" I like using C-g à la Emacs in the command line.  Don't ask me why.
-cnoremap <C-g> <Esc>
 
 " No idea what it's for...
 set backspace=2
